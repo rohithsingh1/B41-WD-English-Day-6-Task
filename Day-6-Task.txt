@@ -1,0 +1,549 @@
+1)Find the culprit
+
+
+<!DOCTYPE html>
+<html>
+<body>
+ <script>
+ alert("I'm JavaScript!");
+ </script>
+ Whats the error in this ?
+</body>
+</html>
+
+output : Executes perfectly, culprit is alert='I'm JavaScript!'
+
+=========================================================================================================================
+=========================================================================================================================
+
+2)Explain the below how it works
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+script.js
+
+alert("I'm JavaScript!");
+alert('Hello') // this line is not having semicolon
+alert(`World`)
+alert(3 +
+1
++ 2); // this is multiple line code and its working
+
+Explanation : JavaScript executes the asynchronous functions one after the other, so 
+                first alert is Executed ('I'm JavaScript!') then
+                second alert is Executed ('Hello') then
+                third alert is Executed ('World') then
+                final alert is Executed 
+
+=========================================================================================================================
+=========================================================================================================================
+
+3) Fix the below to alert Guvi geek
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+script.js
+
+let admin=9, fname=10.5; 
+fname = "Guvi";
+lname = "geek"
+admin = fname+' '+lname;
+alert( admin ); // "Guvi geek"
+
+Explanation : Added a space between fname and lname
+
+==========================================================================================================================
+==========================================================================================================================
+
+
+4)Fix the below to alert sum of two numbers
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+script.js
+
+let a = parseInt(prompt("First number?"));
+let b = parseInt(prompt("Second number?"));
+alert(a + b);
+
+Explanation : 
+            prompt() asks user to enter the string Integer
+            parseInt() takes a string as a argument and converts to a Integer
+            finally both a and b are added , output is displayed in alert prompt
+
+==========================================================================================================================
+=========================================================================================================================
+
+5) How to get the success in console.
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+script.js
+
+let a = prompt("Enter a number?");
+//Don't modify any code below this
+if (a) {
+ console.log( 'OMG it works for any number inc 0' );
+}
+else
+{
+ console.log( "Success" );
+}
+
+
+Explanation : prompt asks user to enter the data , if you don't pass the data 
+                'a' has default value 'undefined' so, it prints 'Success' in console
+
+
+=====================================================================================================================
+=====================================================================================================================
+
+6) Fix the code to welcome the Employee
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+script.js
+
+let login = 'Employee';
+let message = (login == 'Employee') ? 'Welcome the Employee' : '';
+console.log(message);
+
+
+Explanation : 'ternary operator' checks the condition if it is true then it prints 'Welcome the Employee'
+                else it does not print anything
+
+
+=====================================================================================================================
+=====================================================================================================================
+
+
+7) Change the code to print 1 to 10 in 4 lines
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+before script.js
+
+let num = 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+num += 1
+console.log(num)
+
+
+
+After script.js
+
+let n = 4
+let n1=10
+let str = ''
+for(let i=0; i<n; i++){
+    for(let j=1; j<=n1; j++){
+        str = str + j
+    }
+    console.log(str);
+    str = ''
+}
+
+
+
+
+Explanation : before script.js prints 1 to 10 only one time and all numbers in seperate lines
+               after script.js  prints 1 to 10 ==> 4 times in seperate lines
+
+
+==================================================================================================================
+==================================================================================================================
+
+8)Change the code to print all the gifts
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+before script
+
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log('Wrapped ${'gifts[i]'} and added a bow!');
+}
+
+
+after script
+
+let gifts = ["teddy bear", "drone", "doll"];
+for (let i = 0; i < 3; i++) {
+  console.log(`Wrapped ${gifts[i]} and added a bow!`);
+}
+
+
+
+Explanation : in the previous script code it prints the "Wrapped ${'gifts[i]'} and added a bow!" 3 times
+                after script code prints all the gifts
+
+
+=======================================================================================================================
+=======================================================================================================================
+
+
+9) Fix the code to disarm the bomb.
+
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+before script
+
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  }
+}
+
+
+after script
+
+let countdown = 100;
+while (countdown > 0) {
+  countdown--;
+  if(countdown == 0)
+  {
+   console.log("bomb triggered");
+  } else {
+      console.log('disarm the bomb')
+      break
+  }
+}
+
+
+Explanation : In previous script.js file the bomb gets triggered as the countdown reaches to zero(0)
+                in after script.js file , "disarm the bomb" is printed as the countdown never reaches to zero(0)
+
+
+=====================================================================================================================
+=====================================================================================================================
+
+
+10)Fix the code to get the largest of three.
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+before script
+
+aa = (f,s,t) => {
+ let f,s,t;
+ console.log(f,s,t);
+ if(f>s &&f>t){
+ console.log(f)}
+ else if(s>f && s>t){
+ console.log(s)}
+ else{
+ console.log(t)}
+}
+aa(1,2,3);
+
+
+
+after script
+
+aa=(f, s, t) => {
+    if(f>s) {
+        if(f>t) {
+            console.log('largest of 3 numbers is ',f);
+        }
+    }
+    if(s>f) {
+        if(s>t) {
+            console.log('largest of 3 numbers is ',s);
+        }
+    }
+    if(t>f) {
+        if(t>s) {
+            console.log('largest of 3 numbers is ',t);
+        }
+    }
+}
+aa(2,3,1);
+
+
+
+Explanation : previous script.js file does not print the largest of 3 numbers.
+                after script.js file prints the largest of 3 numbers.
+
+
+================================================================================================================
+================================================================================================================
+
+11)Fix the code to Sum of the digits present in the number
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+before script
+
+let n = 123;
+console.log(add(n));
+function add(n)
+{
+let sum = 10;
+for(var i=0;i<n.length;i++){
+ sum+=n[i]
+ }
+ return sum;
+}
+
+
+after script
+
+let n = 123;
+console.log(add(n.toString(10)));
+function add(n)
+{
+    let arr=n.split('')
+    let sum = 0;
+    for(var i=0;i<n.length;i++){
+        sum+= parseInt(arr[i])
+    }
+    return sum;
+}
+
+
+Explanation : previous script.js prints '012' as output but does not print the sum of digits.
+                after script.js file prints sum of digits as output.
+
+
+
+====================================================================================================================
+====================================================================================================================
+
+12)Fix the code to Sum of all numbers using IIFE function
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+
+before script
+
+const arr = [9,8,5,6,4,3,2,1];
+(function() {
+ let sum = 0;
+ for (var i = 0; i <= arr.length; i++);{
+ sum += arr[i];
+ }
+ console.log(sum);
+ return sum;
+})();
+
+
+
+after script
+
+const arr = [9,8,5,6,4,3,2,1];
+(function(arr) {
+ let sum = 0;
+ for (let i = 0; i < arr.length; i++){
+    sum += arr[i];
+ }
+ console.log(sum);
+})(arr);
+
+
+Explanation : before script prints 'NAN' because we are not passing the reference to 'arr' array object.
+                after script.js file print sum of all numbers in the array as we are passing reference to 'arr'
+                array object.
+
+
+======================================================================================================================
+======================================================================================================================
+
+
+13)Fix the code to gen Title caps.
+
+index.html
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <script src='script.js'></script>
+    </body>
+
+</html>
+
+before script
+
+var arr = [“guvi”, “geek”, “zen”, “fullstack”];
+var ano = function(arro) {
+ for (var i = 0; i <= arro.length; i++) {
+ console.log(arro[i][0].toUpperCase() + arro[i].substr(1));
+ }
+}
+ano();
+
+
+after script
+
+var arr = ['guvi', 'geek', 'zen', 'fullstack'];
+var ano = function(arro) {
+ for (var i = 0; i < arro.length; i++) {
+ console.log(arro[i][0].toUpperCase() + arro[i].substr(1));
+ }
+}
+ano(arr);
+
+
+Explanation : in previous script.js file we did not pass the reference of arr to function ano()
+                in after script.js file we passed the reference of arr to function ano()
+
+
+=============================================================================================================
+=============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
